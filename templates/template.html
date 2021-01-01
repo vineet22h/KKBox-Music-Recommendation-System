@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='template.css') }}"/>
+    <script src="{{url_for('static', filename='template.js')}}"></script>
+</head>
+<body>    
+    <div class="alert" id="first_div" style="display:none;text-align: center;">
+        <span class="closebtn" id="first">&times;</span>  
+        <p id="text"></p>
+    </div>
+    <!-- Header -->
+    <div class="header container-fluid">
+        <h1 class="header-txt">KKBox Music Recommendation System</h1>
+        <hr class="header-hr">
+    </div>
+
+    <!-- main -->
+    <div class="container">
+        {% block main %}{% endblock main%}
+    </div>  
+
+    <!-- footer -->
+    <footer class="footer container-fluid">
+        <div class="col-lg-4">
+            <div class="about">
+            <h1>More About Me</h1>
+            <p class="txt">Seeking for a kick start in Data Science career in a reputed company, where I can apply my hard and soft skills in a smarter way, which increase company’s productivity and my skills and knowledge potential.
+            </p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="connect">
+                <h1>Keep Connected</h1>
+                <div class="social-container">
+                    <ul class="social-icons">
+                        <li><a href="https://www.linkedin.com/in/vineet-haswani-1576b0160/"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://github.com/vineet22h"><i class="fab fa-github"></i></a></li>
+                        <li><a href="https://www.instagram.com/vineethaswani"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/vineet.haswani"><i class="fab fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='col-lg-4 '>
+            <div class="connect">
+                <h1>Contact Information</h1>
+                <i class="fa fa-home"></i><i class="txt">Vineet Mukesh Haswani<br>&nbsp;&nbsp;&nbsp; 14, A, Pitreshwar Colony<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shirpur-425405<br></i>
+                <i class="fa fa-mobile"></i><i class="txt">+91 9421458180</i><br>
+                <i class="fa fa-envelope "></i><i class='txt'>vineethaswani2@gmail.com<br></i>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

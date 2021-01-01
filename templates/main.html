@@ -1,0 +1,228 @@
+{% extends "template.html" %}
+{% block main %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}"/>
+
+{{ super() }}
+<script src="{{url_for('static', filename='main.js')}}"></script>
+
+
+<div class = 'container'>
+    <h3> User Information :</h3>
+    <div class = 'col-log-12 col-md-12 col-sm-12 col-xs-12 user-block' style="margin-bottom:2rem;">
+        <div class="col-log-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-2 col-lg-3 col-xs-0 col-sm-1"></div>
+            <div class="demo col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                <label for="drop" >User Id</label>
+                <div class="dropdown-container" id="drop">
+                    <select id="user_id">
+                
+                    </select>
+                    <div class="select-icon">
+                    <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                        <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                    </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-3 col-xs-0 col-sm-1"></div>
+        </div>
+
+        <div class=" demo form-group col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" id="age" placeholder="0-100">
+        </div>
+        
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="reg_date" class="col-4 col-form-label">Subscribe Date</label>
+            <div class="col-10">
+              <input class="form-control " type="date" value="2013-08-19" id="reg_date">
+            </div>
+        </div>
+
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="exp_date" class="col-12 col-form-label">Unsubscribe Date</label>
+            <div class="col-10">
+              <input class="form-control" type="date" value="2017-08-19" id="exp_date">
+            </div>
+        </div>
+
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="reg_method " class="col-2" >Subscribe Mode</label>
+            <div class="dropdown-container" id="reg_method">
+                <select id="select_reg_mode">
+                {%for i in [9, 7, 3, 4, 13]%} 
+                    <option>{{i}}</option>
+                {%endfor%}
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="gender" class="col-2">Gender</label>
+            <div class="dropdown-container" id="gender">
+                <select id="select_gender">
+                {%for i in ['Male', 'Female', 'Transgender']%} 
+                    <option>{{i}}</option>
+                {%endfor%}
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="city">City Id</label>
+            <div class="dropdown-container" id="city">
+                <select id="select_city">
+                {%for i in [1, 13, 5, 22,4,15, 6, 14, 12, 9, 8, 18, 11,21, 10, 3, 16, 7, 16]%} 
+                    <option>{{i}}</option>
+                {%endfor%}
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3> Song Information :</h3>
+    <div class = 'col-log-12 col-md-12 col-sm-12 col-xs-12 user-block' style="margin-bottom:2rem;">
+        <div class="col-log-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-2 col-lg-3 col-xs-0 col-sm-1"></div>
+            <div class="demo col-lg-6 col-md-8 col-sm-10 col-xs-12">
+                <label for="drop">Name</label>
+                <div class="dropdown-container" id="drop">
+                    <select id="song_id" >
+
+                    </select>
+                    <div class="select-icon">
+                    <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                        <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                    </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 col-lg-3 col-xs-0 col-sm-1"></div>
+        </div>
+        
+
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="genre_id">Genre Id</label>
+            <div class="dropdown-container" id="genre_id">
+                <select id="select_genre">
+                {%for i in [465, 458, 921, 1609, 444, 1259, 2022, 359, 139]%} 
+                    <option>{{i}}</option>
+                {%endfor%}
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+    
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="artist_name">Artist Name</label>
+            <div class="dropdown-container" id="artist_name">
+                <select id="select_artist" >
+                
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+    
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="lang_id">Language</label>
+            <div class="dropdown-container" id="lang_id">
+                <select id="select_lang">
+                {%for i in [3, 52, 31, -1, 17, 10, 24, 59, 45, 38]%} 
+                    <option >{{i}}</option>
+                {%endfor%}
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <h3> KKBox Application Source Information :</h3>
+    <div class = 'col-log-12 col-md-12 col-sm-12 col-xs-12 user-block' >
+        
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="source_system_tab">System Tab</label>
+            <div class="dropdown-container" id="source_system_tab">
+                <select id="select_source_system_tab">
+                {%for i in ['My library', 'Discover', 'Search', 'Radio', 'Listen with', 'Explore', 'Notification', 'Settings']%} 
+                    <option>{{i}}</option>
+                {%endfor%}
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="source_screen_name" class="col-12">Screen Name</label>
+            <div class="dropdown-container" id="source_screen_name">
+                <select id="select_source_screen_name">
+                {%for i in ['Local playlist more', 'Online playlist more', 'Radio', 'Album more', 
+                            'Search', 'Artist more', 'Discover Feature', 'Discover Chart', 
+                            'Others profile more', 'Discover Genre', 'My library', 'Explore', 
+                            'Unknown', 'Discover New', 'Search Trends', 'Search Home',
+                            'My library Search', 'Self profile more', 'Concert', 'Payment']%} 
+                    <option>{{i}}</option>
+                {%endfor%}
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+        
+        <div class="demo col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <label for="source_type">Type</label>
+            <div class="dropdown-container" id="source_type">
+                <select id="select_source_type">
+                {%for i in ['Local Library', 'Online Playlist', 'Local Playlist', 'Radio',
+                            'Album', 'Top Hits For Artist', 'Song', 'Song Based Playlist', 
+                            'Listen With', 'Topic Article Playlist', 'Artist', 'My Daily Playlist']%} 
+                    <option>{{i}}</option>
+                {%endfor%}
+                </select>
+                <div class="select-icon">
+                <svg focusable="false" viewBox="0 0 104 128" width="25" height="35" class="icon">
+                    <path d="m2e1 95a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm0-3e1a9 9 0 0 1 -9 9 9 9 0 0 1 -9 -9 9 9 0 0 1 9 -9 9 9 0 0 1 9 9zm14 55h68v1e1h-68zm0-3e1h68v1e1h-68zm0-3e1h68v1e1h-68z"></path>
+                </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button type="button" class="btn btn-info col-lg-12 col-sm-12 col-md-12 col-xs-12" id = "predict">Predict</button>  
+</div>
+{% endblock main %}
