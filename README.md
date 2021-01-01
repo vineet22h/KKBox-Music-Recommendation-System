@@ -1,5 +1,5 @@
 # KKBox-Music-Recommendation-System
-Music Recommendation system is all about recommending the songs which the user like based on their previous activities like searches, previously listened songs, etc. There are many techniques for building a recommendation like Collaborative Filtering, Content Based filtering, Hybrid methods (Combining both Content Based and Collaborative Filtering methods). 
+The Music Recommendation system is all about recommending the songs which the user like based on their previous activities like searches, previously listened songs, etc. There are many techniques for building a recommendation like Collaborative Filtering, Content Based filtering, Hybrid methods (Combining both Content Based and Collaborative Filtering methods). 
 
 In this challenge we have to build a recommendation system that can predict whether a user will listen to a song again within one month after the user's very first observable listening event in KKBox application. If the user did not listen to the song again within one month, the target variable will be 0, and 1 otherwise.  
 # Business Problem : 
