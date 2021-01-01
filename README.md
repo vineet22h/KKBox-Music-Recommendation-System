@@ -8,3 +8,5 @@ This can helps KKBox company to recommend songs to users, to apply rating to son
 Building a recommendation system using Collaborative based algorithms like matrix factorization and word embedding. 
 # Performance Metric : 
 Performance metric for the challenge Area under Receiver Operating Characteristic Curve (AUC ROC) Score. As the both the classed are balanced in dataset so, we will choose AUC ROC not F1-Score. We can also choose Accuracy over AUC ROC as classes are balanced but advantage of AUC ROC score is that we can get correct threshold if we are using linear models like Linear Regression or Logistic Regression.
+# Deployed Link
+http://ec2-18-188-5-2.us-east-2.compute.amazonaws.com:8080/
