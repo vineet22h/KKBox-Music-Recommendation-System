@@ -17,9 +17,3 @@ http://ec2-18-188-5-2.us-east-2.compute.amazonaws.com:8080/
 
 # ScreenShot:
 ![alt text](https://github.com/vineet22h/KKBox-Music-Recommendation-System/blob/main/screenshot.png)
-
-
-![alt text](https://github.com/vineet22h/KKBox-Music-Recommendation-System/blob/main/screenshot_pred.png)
-
-
-
